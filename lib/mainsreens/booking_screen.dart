@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:user1/mainsreens/booking_card.dart';
+import 'package:user1/mainsreens/payment_dropdown.dart';
 
 class BookingScreen extends StatelessWidget {
   const BookingScreen({super.key});
@@ -33,6 +35,11 @@ class BookingScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              Text(
+                'Pickup & Return Details:',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              BookingCard(),
               SizedBox(height: 16),
               Text(
                 'Rental Summary:',
@@ -57,53 +64,13 @@ class BookingScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 16),
+              SizedBox(height: 16),
+              SizedBox(height: 16),
               Text(
                 'Payment Method:',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
-              Column(
-                children: [
-                  ListTile(
-                    leading:
-                        Radio(value: 1, groupValue: 1, onChanged: (value) {}),
-                    title: Text('Credit/Debit Card'),
-                  ),
-                  ListTile(
-                    leading:
-                        Radio(value: 2, groupValue: 1, onChanged: (value) {}),
-                    title: Text('Bank Transfer'),
-                  ),
-                  ListTile(
-                    leading:
-                        Radio(value: 3, groupValue: 1, onChanged: (value) {}),
-                    title: Text('Digital Wallet'),
-                  ),
-                  ListTile(
-                    leading:
-                        Radio(value: 4, groupValue: 1, onChanged: (value) {}),
-                    title: Text('Cash at Pickup'),
-                  ),
-                ],
-              ),
-              SizedBox(height: 16),
-              Text(
-                'Pickup & Return Details:',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              Card(
-                child: ListTile(
-                  title: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Pickup Location: 789 Main Street, Downtown'),
-                      Text('Pickup Date: Dec 21, 2024'),
-                      Text('Return Location: 789 Main Street, Downtown'),
-                      Text('Return Date: Dec 26, 2024'),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(height: 16),
+              PaymentDropdown(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
